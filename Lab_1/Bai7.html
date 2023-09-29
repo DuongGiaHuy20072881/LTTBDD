@@ -1,78 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coding Challenge #7</title>
 </head>
-
 <body>
     <script>
-
-        console.log("Coding Challenge 7");
-
-        var persion = {
-            weight: null,
-            height: null
+        const mark = {
+        firstName: "Mark",
+        lastName: "Miller",
+        height: 1.69,
+        mass: 78,
+        calcBMI: function () {
+            this.bmi = this.mass / (this.height * this.height);
+            return this.bmi;
         }
+        };
 
-        // create function to calculate tip
-        calcBMI = (persion) => {
-            return persion.weight / persion.height ** 2;
+        const john = {
+        firstName: "John",
+        lastName: "Smith",
+        height: 1.95,
+        mass: 92,
+        calcBMI: function () {
+            this.bmi = this.mass / (this.height * this.height);
+            return this.bmi;
         }
-
-        // create function to print result
-        printResult = (bmi1, bmi2) => {
-            if (bmi1 == bmi2) {
-                console.log(`Mark's BMI (${bmi1}) is equal to John's (${bmi2})!`);
-            } else if (bmi1 > bmi2) {
-                console.log(`Mark's BMI (${bmi1}) is higher than John's (${bmi2})!`);
-            } else {
-                console.log(`John's BMI (${bmi2}) is higher than Mark's (${bmi1})!`);
-            }
         };
 
-        // data Mark higher
-        var Marks = {
-            weight: 78,
-            height: 1.69
-        };
-        var John = {
-            weight: 92,
-            height: 1.95
-        };
+        console.log(mark.calcBMI());
+        console.log(john.calcBMI());
 
-        console.log("Test data 1: ");
-        printResult(calcBMI(Marks), calcBMI(John));
-
-        // data John higher
-        var data2_mark = {
-            weight: 95,
-            height: 1.88
-        };
-        var data2_john = {
-            weight: 85,
-            height: 1.76
-        };
-
-        console.log("Test data 2: ");
-        printResult(calcBMI(data2_mark), calcBMI(data2_john));
-
-        // data equal
-        var data3_mark = {
-            weight: 95,
-            height: 1.88
-        };
-        var data3_john = {
-            weight: 95,
-            height: 1.88
-        };
-
-        console.log("Test data 3: ");
-        printResult(calcBMI(data3_mark), calcBMI(data3_john));
-
+        if (mark.bmi > john.bmi) {
+        console.log(
+            `${mark.firstName}'s BMI (${mark.bmi}) is higher than ${john.firstName}'s BMI (${john.bmi})`
+        );
+        } else if (john.bmi > mark.bmi) {
+        console.log(
+            `${mark.firstName}'s BMI (${john.bmi}) is higher than ${mark.firstName}'s BMI (${john.bmi})`
+        );
+        }
     </script>
 </body>
-
 </html>

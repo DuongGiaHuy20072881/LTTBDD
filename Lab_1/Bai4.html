@@ -1,49 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coding Challenge #4</title>
 </head>
-
 <body>
     <script>
+        //Data
+        const tip = (ValueBill) => {
+            if(ValueBill >= 50 && ValueBill <= 300){
+                return ValueBill * (15/100);
+            }else{
+                return ValueBill * (20/100);
+            }
+        };
 
-        console.log("Coding Challenge 4");
+        const bill_1 = 275
+        const a = tip(bill_1);
+        console.log(`The bill was 275, the tip was ${a.toFixed(2)}, and the total value ${bill_1 + a}`);
+        
+        const bill_2 = 40
+        const b = tip(bill_2);
+        console.log(`The bill was 40, the tip was ${b.toFixed(2)}, and the total value ${bill_2 + b}`);
 
-        function calcTip(bill) {
-            return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
-        }
-
-        function calcTotal(bill, tip) {
-            return bill + tip;
-        }
-
-        function printResult(bill, tip, total) {
-            console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${total}`);
-        }
-
-        var bill = 275;
-        var tip = calcTip(bill);
-        var total = calcTotal(bill, tip);
-
-        printResult(bill, tip, total);
-
-        bill = 40;
-        tip = calcTip(bill);
-        total = calcTotal(bill, tip);
-
-        printResult(bill, tip, total);
-
-        bill = 430;
-        tip = calcTip(bill);
-        total = calcTotal(bill, tip);
-
-        printResult(bill, tip, total);
-
+        const bill_3 = 430
+        const c = tip(bill_3);
+        console.log(`The bill was 430, the tip was ${c.toFixed(2)}, and the total value ${bill_3 + c}`);
 
     </script>
 </body>
-
 </html>

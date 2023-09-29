@@ -1,46 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coding Challenge #6</title>
 </head>
-
 <body>
     <script>
-
-        console.log("Coding Challenge 6");
-
-        var bill = [];
-        var tips = [];
-        var totals = [];
-
-        // create funciton to calculate tip
-        calcTip = (b) => {
-            return b >= 50 && b <= 300 ? b * 0.15 : b * 0.20;
+    const calcTip = (bill) => {
+        if (bill >= 50 && bill <= 300) {
+            return bill * 0.15; 
+        } else {
+            return bill * 0.2; 
         }
+    };
 
-        // create function to calculate total
-        calcTotal = (bill, tip) => {
-            return bill + tip;
-        }
+    const testBill = 100;
+    const tip = calcTip(testBill);
+    console.log(`Tip for a bill of $${testBill}: $${tip}`);
 
-        // create function to print result
-        printResult = (bill, tip, total) => {
-            console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${total}`);
-        }
+    const bills = [125, 555, 44];
 
-        console.log("Test data: 125, 555, 44");
-        bill = [125, 555, 44];
-        bill.forEach(b => {
-            tips.push(calcTip(b));
-            totals.push(calcTotal(b, calcTip(b)));
-        });
+    const tips = bills.map(calcTip);
 
-        printResult(bill, tips, totals);
+    const totals = bills.map((bill, index) => bill + tips[index]);
 
+    console.log("Bills:", bills);
+    console.log("Tips:", tips);
+    console.log("Totals:", totals);
     </script>
 </body>
-
 </html>
