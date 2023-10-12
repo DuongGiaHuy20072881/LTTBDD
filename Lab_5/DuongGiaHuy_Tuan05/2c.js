@@ -3,7 +3,7 @@ import { TouchableOpacity } from "react-native";
 import { StyleSheet, Text, View, TextInput } from "react-native";
 import { Checkbox } from "react-native-paper";
 
-export default function Cau2c() {
+export default function App() {
   var [password, setPassword] = useState("");
   var [pLength, setPLength] = useState(0);
   var [lowercase, choiceLowerCase] = useState(true);
